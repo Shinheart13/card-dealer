@@ -191,27 +191,27 @@
     position: absolute;
     top: 8px;
     left: 9px;
-    line-height: 1;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    align-items: center;
+    gap: 0;
   }
-  .card-tl .rank { font-size: 1.55rem; font-weight: 900; line-height: 1; }
+  .card-tl .rank { font-size: 1.45rem; font-weight: 900; line-height: 1; padding-bottom: 4px; }
   .card-tl .suit { font-size: 1rem; line-height: 1; }
 
   .card-br {
     position: absolute;
     bottom: 8px;
     right: 9px;
-    line-height: 1;
     text-align: center;
     transform: rotate(180deg);
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    align-items: center;
+    gap: 0;
   }
-  .card-br .rank { font-size: 1.55rem; font-weight: 900; line-height: 1; }
+  .card-br .rank { font-size: 1.45rem; font-weight: 900; line-height: 1; padding-bottom: 4px; }
   .card-br .suit { font-size: 1rem; line-height: 1; }
 
   .card-body {
@@ -269,12 +269,14 @@
     left: 5px;
     font-size: 0.72rem;
     font-weight: 900;
-    line-height: 1;
     text-align: center;
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    align-items: center;
+    gap: 0;
   }
+  .mini-tl .rank { line-height: 1; padding-bottom: 3px; }
+  .mini-tl .suit { line-height: 1; }
 
   .mini-br {
     position: absolute;
@@ -282,13 +284,15 @@
     right: 5px;
     font-size: 0.72rem;
     font-weight: 900;
-    line-height: 1;
     text-align: center;
     transform: rotate(180deg);
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    align-items: center;
+    gap: 0;
   }
+  .mini-br .rank { line-height: 1; padding-bottom: 3px; }
+  .mini-br .suit { line-height: 1; }
 
   .mini-body {
     position: absolute;
@@ -504,9 +508,9 @@ function miniCard(card) {
     const cls = card.color === 'red' ? 'joker-red' : 'joker-black';
     const art = card.color === 'red' ? '🤡' : '🎭';
     return `<div class="mini-card ${cls}" title="Joker (${card.color})">
-      <div class="mini-tl">★</div>
+      <div class="mini-tl"><span class="rank">★</span><span class="suit">☆</span></div>
       <div class="mini-body">${art}</div>
-      <div class="mini-br">★</div>
+      <div class="mini-br"><span class="rank">★</span><span class="suit">☆</span></div>
     </div>`;
   }
   const { rank, suit } = card;
@@ -515,9 +519,9 @@ function miniCard(card) {
     ? `<div class="mini-body" style="flex-direction:column;gap:1px;font-size:1rem">${faceSymbol}<span style="font-size:0.6rem;font-weight:900">${rank}${suit.symbol}</span></div>`
     : `<div class="mini-body">${suit.symbol}</div>`;
   return `<div class="mini-card ${suit.color}" title="${rank} of ${suit.name}">
-    <div class="mini-tl">${rank}<br>${suit.symbol}</div>
+    <div class="mini-tl"><span class="rank">${rank}</span><span class="suit">${suit.symbol}</span></div>
     ${centerHTML}
-    <div class="mini-br">${rank}<br>${suit.symbol}</div>
+    <div class="mini-br"><span class="rank">${rank}</span><span class="suit">${suit.symbol}</span></div>
   </div>`;
 }
 
