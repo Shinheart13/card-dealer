@@ -193,9 +193,12 @@
     left: 9px;
     line-height: 1;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
   }
   .card-tl .rank { font-size: 1.55rem; font-weight: 900; line-height: 1; }
-  .card-tl .suit { font-size: 1rem; line-height: 1; margin-top: 1px; }
+  .card-tl .suit { font-size: 1rem; line-height: 1; }
 
   .card-br {
     position: absolute;
@@ -204,9 +207,12 @@
     line-height: 1;
     text-align: center;
     transform: rotate(180deg);
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
   }
   .card-br .rank { font-size: 1.55rem; font-weight: 900; line-height: 1; }
-  .card-br .suit { font-size: 1rem; line-height: 1; margin-top: 1px; }
+  .card-br .suit { font-size: 1rem; line-height: 1; }
 
   .card-body {
     position: absolute;
@@ -263,8 +269,11 @@
     left: 5px;
     font-size: 0.72rem;
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
   }
 
   .mini-br {
@@ -273,9 +282,12 @@
     right: 5px;
     font-size: 0.72rem;
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1;
     text-align: center;
     transform: rotate(180deg);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
   }
 
   .mini-body {
